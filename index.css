@@ -1,0 +1,12 @@
+body {
+  background-color: lightblue;
+}
+
+img{
+	width:400px
+}
+
+.answer {
+  visibility: hidden;
+}
+

@@ -1,2 +1,2 @@
 # radsapp
-Test your CXR findings
+Test your knowledge of CXR findings

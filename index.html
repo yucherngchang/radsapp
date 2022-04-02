@@ -1,0 +1,35 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="index.css" />
+<script src="https://www.papaparse.com/resources/js/papaparse.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+
+<h2>Chest X-rays quiz...</h2>
+<button id="tutorial" type="button">Tutorial</button>
+<button id="start" onclick="loadImage()" type="button">Start</button>
+<table id="main">
+  <tr>
+    <th id="pane1">
+		<div id="imgblock">
+			<img id="image" />
+		</div>
+	</th>
+    <th id="pane2">
+	<div class="answer">
+	  <input type="checkbox" id="check1" value="No Finding">
+	  <label for="check1">No Finding</label><br>
+	  <input type="checkbox" id="check2" value="Effusion">
+	  <label for="check2">Effusion</label><br>
+	  <input type="checkbox" id="check3" value="Mass">
+	  <label for="check3">Mass</label><br>
+	  <button id="check" onclick="check()" type="button">Check</button>
+	</div>
+	<p class="secret"></p>
+	</th>
+  </tr>
+</table>
+
+</body>
+</html>
