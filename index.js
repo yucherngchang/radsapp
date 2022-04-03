@@ -1,5 +1,7 @@
 function loadImage(){
-	//document.getElementById("image").src="./images/00000001_000.png";
+	[].forEach.call(document.querySelectorAll('.tutorialBlock'), function (el) {
+  el.style.visibility = 'hidden';
+});
 
 	var data = Papa.parse(getcsv());
 	
@@ -9,9 +11,63 @@ function loadImage(){
 	[].forEach.call(document.querySelectorAll('.answer'), function (el) {
   el.style.visibility = 'visible';
 });
+	[].forEach.call(document.querySelectorAll('input[type=checkbox]'), function (el) {
+  el.checked = false;
+});
+	document.getElementById("reveal").innerHTML="";
+
 
 }
 
+function loadTutorial(){
+	[].forEach.call(document.querySelectorAll('.tutorialBlock'), function (el) {
+  el.style.visibility = 'visible';
+});
+	document.getElementById("tutorialBlock").innerHTML=`Effusion-> blunting of costophrenic recesses \n
+	Cardiomegaly-> >50% of thoracic cavity \n
+	`;
+	
+}
+
+
+
+function check(){
+	var str=document.getElementById("secret").innerHTML;
+	var answers = str.split("|");
+	
+	var checkedBoxes = document.querySelectorAll('input[type=checkbox]:checked');
+	
+	var checked=[];
+	for (let i = 0; i < checkedBoxes.length; i++) {
+  checked[i]=checkedBoxes[i].value;
+}
+	if (arraysEqual(checked, answers) == true){
+		document.getElementById("reveal").innerHTML="correct!";
+	}else{
+		var str2="";
+		for (let i = 0; i < answers.length; i++) {
+  str2=str2+" "+answers[i];
+}
+		
+		document.getElementById("reveal").innerHTML="incorrect, answers are "+str2;
+	}
+}
+
+function arraysEqual(a, b) {
+  if (a === b) return true;
+  if (a == null || b == null) return false;
+  if (a.length !== b.length) return false;
+
+  // If you don't care about the order of the elements inside
+  // the array, you should sort both arrays here.
+  // Please note that calling sort on an array will modify that array.
+  // you might want to clone your array first.
+
+  for (var i = 0; i < a.length; ++i) {
+    if (a[i] !== b[i]) return false;
+  }
+  return true;
+}
 
 function getcsv(){
 	return `Image Index,Finding Labels,Follow-up #,Patient ID,Patient Age,Patient Gender,View Position,OriginalImage[Width,Height],OriginalImagePixelSpacing[x,y]

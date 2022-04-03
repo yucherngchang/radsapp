@@ -10,3 +10,10 @@ img{
   visibility: hidden;
 }
 
+.secret {
+  visibility: hidden;
+}
+
+.tutorialBlock {
+  visibility: hidden;
+}

@@ -7,7 +7,7 @@
 <body>
 
 <h2>Chest X-rays quiz...</h2>
-<button id="tutorial" type="button">Tutorial</button>
+<button id="tutorial" onclick="loadTutorial()" type="button">Tutorial</button>
 <button id="start" onclick="loadImage()" type="button">Start</button>
 <table id="main">
   <tr>
@@ -17,6 +17,7 @@
 		</div>
 	</th>
     <th id="pane2">
+	<p id="tutorialBlock" class="tutorialBlock"></p>
 	<div class="answer">
 	  <input type="checkbox" id="check1" value="No Finding">
 	  <label for="check1">No Finding</label><br>
@@ -24,12 +25,33 @@
 	  <label for="check2">Effusion</label><br>
 	  <input type="checkbox" id="check3" value="Mass">
 	  <label for="check3">Mass</label><br>
+	  <input type="checkbox" id="check4" value="Hernia">
+	  <label for="check4">Hernia</label><br>
+	  <input type="checkbox" id="check5" value="Cardiomegaly">
+	  <label for="check5">Cardiomegaly</label><br>
+	  <input type="checkbox" id="check6" value="Effusion">
+	  <label for="check6">Effusion</label><br>
+	  <input type="checkbox" id="check7" value="Nodule">
+	  <label for="check7">Nodule</label><br>
+	  <input type="checkbox" id="check8" value="Atelectasis">
+	  <label for="check8">Atelectasis</label><br>
+	  <input type="checkbox" id="check9" value="Emphysema">
+	  <label for="check9">Emphysema</label><br>
+	  <input type="checkbox" id="check10" value="Infiltration">
+	  <label for="check10">Infiltration</label><br>
+	  <input type="checkbox" id="check11" value="Pneumothorax">
+	  <label for="check11">Pneumothorax</label><br>
 	  <button id="check" onclick="check()" type="button">Check</button>
+	  <p id="reveal"></p>
 	</div>
-	<p class="secret"></p>
+	<p id="secret" class="secret"></p>
 	</th>
   </tr>
 </table>
 
 </body>
+<footer>
+  <p>Images and annotations derived from NIH Clinical Center from the Summers group</p>
+  <p><a href="https://nihcc.app.box.com/v/ChestXray-NIHCC">link to database</a></p>
+</footer>
 </html>
