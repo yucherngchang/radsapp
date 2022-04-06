@@ -1,23 +1,55 @@
+<!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="index.css" />
-<script src="https://www.papaparse.com/resources/js/papaparse.js"></script>
-<script type="text/javascript" src="index.js"></script>
-</head>
-<body>
 
-<h2>Chest X-rays quiz...</h2>
-<button id="tutorial" onclick="loadTutorial()" type="button">Tutorial</button>
-<button id="start" onclick="loadImage()" type="button">Start</button>
-<table id="main">
-  <tr>
-    <th id="pane1">
-		<div id="imgblock" class="imgblock">
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/bulma@0.9.0/css/bulma.min.css" />
+	<link rel="stylesheet" type="text/css" href="index.css" />
+	<script src="https://www.papaparse.com/resources/js/papaparse.js"></script>
+	<script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+    <section class="hero is-fullheight is-default is-bold">
+        <div class="hero-head">
+            <nav class="navbar">
+                <div class="container">
+                    <div class="navbar-brand">
+                        <span class="navbar-burger burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </div>
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <div class="tabs is-right">
+                                <ul>
+                                    <li class="is-active"><a id="tutorial" onclick="loadTutorial()" >Tutorial</a></li>
+                                    <li><a id="start" onclick="loadImage()">Start</a></li>
+                                   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="columns is-vcentered">
+                    <div class="column is-5">
+                        		<div id="imgblock" class="imgblock">
 			<img id="image" class="image" />
 		</div>
-	</th>
-    <th id="pane2">
-	<div id="tutorialblock" class="tutorialblock"></div>
+                    </div>
+                    <div class="column is-6 is-offset-1">
+					<div class="titles">
+						<h1 class="title">Chest x-rays</h1>
+<h2 class="subtitle">Test your knowledge of CXR findings</h2>
+					</div>
+                        <div id="tutorialblock" class="tutorialblock"></div>
 	<div class="answer">
 	  <input type="checkbox" id="check1" value="No Finding">
 	  <label for="check1">No Finding</label><br>
@@ -43,13 +75,21 @@
 	  <p id="reveal"></p>
 	</div>
 	<p id="secret" class="secret"></p>
-	</th>
-  </tr>
-</table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="hero-foot">
+            <div class="container">
+                <div class="tabs is-centered">
+                    <ul>
+                        <li><a>Images and annotations derived from NIH Clinical Center from the Summers group</a><a href="https://nihcc.app.box.com/v/ChestXray-NIHCC">link to database</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
-<footer>
-  <p>Images and annotations derived from NIH Clinical Center from the Summers group</p>
-  <p><a href="https://nihcc.app.box.com/v/ChestXray-NIHCC">link to database</a></p>
-</footer>
+
 </html>

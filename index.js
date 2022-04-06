@@ -1,4 +1,8 @@
 function loadImage(){
+	[].forEach.call(document.querySelectorAll('.titles'), function (el) {
+  el.style.visibility = 'hidden';
+});
+	
 	document.getElementById("tutorialblock").textContent = '';
 	[].forEach.call(document.querySelectorAll('.tutorialBlock'), function (el) {
   el.style.visibility = 'hidden';
@@ -19,8 +23,14 @@ function loadImage(){
 }
 
 function loadTutorial(){
+	[].forEach.call(document.querySelectorAll('.titles'), function (el) {
+  el.style.visibility = 'hidden';
+});
 	[].forEach.call(document.querySelectorAll('.tutorialBlock'), function (el) {
   el.style.visibility = 'visible';
+});
+[].forEach.call(document.querySelectorAll('.answer'), function (el) {
+  el.style.visibility = 'hidden';
 });
 	var text=["blunting of costophrenic recesses", "opacity >3 cm diameter","retrocardiac stomach, retrocardiac air-fluid levels",
 	"heart >50% of thoracic cavity","opacity <3 cm diameter",
