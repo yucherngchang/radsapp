@@ -1,4 +1,5 @@
 function loadImage(){
+	document.getElementById("tutorialblock").textContent = '';
 	[].forEach.call(document.querySelectorAll('.tutorialBlock'), function (el) {
   el.style.visibility = 'hidden';
 });
@@ -15,20 +16,45 @@ function loadImage(){
   el.checked = false;
 });
 	document.getElementById("reveal").innerHTML="";
-
-
 }
 
 function loadTutorial(){
 	[].forEach.call(document.querySelectorAll('.tutorialBlock'), function (el) {
   el.style.visibility = 'visible';
 });
-	document.getElementById("tutorialBlock").innerHTML=`Effusion-> blunting of costophrenic recesses \n
-	Cardiomegaly-> >50% of thoracic cavity \n
-	`;
+	var text=["blunting of costophrenic recesses", "opacity >3 cm diameter","retrocardiac stomach, retrocardiac air-fluid levels",
+	"heart >50% of thoracic cavity","opacity <3 cm diameter",
+	"increased opacification with displacement of lung fissures",
+"flattening of the bilateral hemidiaphragms, increased lung volumes, increased AP diameter",
+"multiple opacities","lucency w/o vascular markings, mediastinal shift"];
+	document.getElementById("tutorialblock").textContent = '';
+	
+	var checkedBoxes = document.querySelectorAll('input[type=checkbox]');
+	
+	var choices=[];
+	for (let i = 0; i < checkedBoxes.length; i++) {
+  choices[i]=checkedBoxes[i].value;
+}
+console.log(choices);
+	
+	for (let i = 1; i < choices.length; i++){ 
+	var newA = document.createElement("button");
+	var linkText = document.createTextNode(choices[i]);
+	newA.appendChild(linkText);
+	newA.id=choices[i];
+	newA.onclick = function() { document.getElementById("image").src="./tutimages/"+choices[i]+".jpg"; };
+	var newP = document.createElement("p");
+	newP.innerHTML=text[i-1];
+	document.getElementById("tutorialblock").insertBefore(newP, document.getElementById("tutorialblock").firstChild);
+	document.getElementById("tutorialblock").insertBefore(newA, document.getElementById("tutorialblock").firstChild);
+	}
+	var newP = document.createElement("p");
+	newP.innerHTML="Images courtesy of MedPix";
+	document.getElementById("tutorialblock").insertBefore(newP, document.getElementById("tutorialblock").firstChild);
+
+
 	
 }
-
 
 
 function check(){
@@ -68,6 +94,7 @@ function arraysEqual(a, b) {
   }
   return true;
 }
+
 
 function getcsv(){
 	return `Image Index,Finding Labels,Follow-up #,Patient ID,Patient Age,Patient Gender,View Position,OriginalImage[Width,Height],OriginalImagePixelSpacing[x,y]
