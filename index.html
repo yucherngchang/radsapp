@@ -28,7 +28,7 @@
                                 <ul>
                                     <li class="is-active"><a id="tutorial" onclick="loadTutorial()" >Tutorial</a></li>
                                     <li><a id="start" onclick="loadImage()">Start</a></li>
-                                   
+									<li><a id="filterBar" onclick="filter()">Filter</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -70,11 +70,14 @@
 	  <input type="checkbox" id="check10" value="Infiltration">
 	  <label for="check10">Infiltration</label><br>
 	  <input type="checkbox" id="check11" value="Pneumothorax">
-	  <label for="check11">Pneumothorax</label><br>
-	  <button id="check" onclick="check()" type="button">Check</button>
+	  <label for="check11">Pneumothorax</label><br><br>
+	  <button id="check" class="button is-dark" onclick="check()" type="button">Check</button>
 	  <p id="reveal"></p>
 	</div>
+	<button id="filterButton" class="button is-dark" onclick="filterCases()" type="button">Filter</button>
 	<p id="secret" class="secret"></p>
+	<p id="filter" class="filter">No Finding|Effusion|Mass|Hernia|Cardiomegaly|Nodule|Atelectasis|Emphysema|Infiltration|Pneumothorax</p>
+	<p id="score" class="score">0/0</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +88,9 @@
                 <div class="tabs is-centered">
                     <ul>
                         <li><a>Images and annotations derived from NIH Clinical Center from the Summers group</a><a href="https://nihcc.app.box.com/v/ChestXray-NIHCC">link to database</a></li>
-                    </ul>
+						<li><a>Tutorial examples derived from MedPix</a></li>
+
+					</ul>
                 </div>
             </div>
         </div>

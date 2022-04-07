@@ -15,3 +15,18 @@ img{
 .tutorialBlock {
   visibility: hidden;
 }
+
+.score {
+  visibility: hidden;
+}
+
+.filter {
+  visibility: hidden;
+}
+
+
+#filterButton {
+  visibility: hidden;
+}
+
+
